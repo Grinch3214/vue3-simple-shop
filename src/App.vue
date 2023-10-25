@@ -1,12 +1,12 @@
 <template>
-	<header>
-		<ul>
+	<header class="bg-slate-600 shadow-border-custom">
+		<ul class="flex gap-4 py-5 container mx-auto">
 			<li v-for="item in links" :key="item">
-				<router-link :to="item.url">Go to {{ item.link }}</router-link>
+				<router-link class="text-sky-600" :to="item.url">Go to {{ item.link }}</router-link>
 			</li>
 		</ul>
 	</header>
-  <div class="container">
+  <div class="container mx-auto">
 		<RouterView />
 	</div>
 </template>
@@ -18,29 +18,4 @@
 	]
 </script>
 
-<style>
-@font-face {
-	font-family: 'Open Sans';
-	src: url('./assets/fonts/OpenSans-Regular.woff2') format('woff2');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Open Sans';
-	src: url('./assets/fonts/OpenSans-SemiBold.woff2') format('woff2');
-	font-weight: 600;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Open Sans';
-	src: url('./assets/fonts/OpenSans-ExtraBold.woff2') format('woff2');
-	font-weight: 800;
-	font-style: normal;
-	font-display: swap;
-}
-</style>
 
