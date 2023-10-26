@@ -1,18 +1,18 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../components/Home.vue'
-import About from '../components/About.vue'
+import Catalog from '../views/Catalog.vue'
+import Product from '../components/Product.vue'
 import NotFound from '../components/404.vue'
 
 const routes = [
 	{
 		path: '/',
-		name: 'home',
-		component: Home
+		name: 'Catalog',
+		component: Catalog
 	},
 	{
-		path: '/about',
-		name: 'about',
-		component: About
+		path: '/product',
+		name: 'Product',
+		component: Product
 	},
 	{
 		path: '/:pathMatch(.*)*',
