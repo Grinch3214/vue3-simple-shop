@@ -13,8 +13,8 @@
 
 <script setup>
 	const links = [
-		{ link: 'Home', url: '/' },
-		{ link: 'About', url: '/about' }
+		{ link: 'Catalog', url: '/' },
+		{ link: 'Product', url: '/product' }
 	]
 </script>
 
