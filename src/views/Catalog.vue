@@ -1,9 +1,10 @@
 <template>
 	<div v-if="productsStore.products.length >= 1" class="flex -mx-4 flex-wrap">
 		<article
-			class="basis-1/3 px-4"
+			class="basis-1/3 px-4 cursor-pointer"
 			v-for="product in productsStore.products"
 			:key="product.id"
+			@click="goToProductpage(product.id)"
 		>
 			<div>
 				<div class="h-80 bg-neutral-600">
@@ -20,11 +21,16 @@
 <script setup>
 	import { useProductsStore } from '../store'
 	import { onMounted } from 'vue'
+	import { useRouter } from 'vue-router'
 
 	const productsStore = useProductsStore()
+	const router = useRouter()
+
+	const goToProductpage = (id) => {
+		router.push({ name: 'Product', params: { id } })
+	}
 
 	onMounted(() => {
-		console.log('MOUNTED >>>>>>>>>>>>>>>')
 		productsStore.fetchProductsFromDB()
 	})
 
