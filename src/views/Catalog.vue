@@ -24,7 +24,6 @@
 	const productsStore = useProductsStore()
 
 	onMounted(() => {
-		console.log('MOUNTED >>>>>>>>>>>>>>>')
 		productsStore.fetchProductsFromDB()
 	})
 
