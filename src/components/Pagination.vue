@@ -1,9 +1,9 @@
 <template>
-  <ul class="flex gap-2 m-5">
+  <ul class="inline-flex">
     <li>
       <button
         type="button"
-				class="border px-3"
+				class="pagination-btn rounded-l-lg"
 				@click="onClickFirstPage"
 				:disabled="isInFirstPage"
       >
@@ -14,7 +14,7 @@
     <li>
       <button
         type="button"
-				class="border px-3"
+				class="pagination-btn"
 				@click="onClickPreviousPage"
 				:disabled="isInFirstPage"
       >
@@ -31,6 +31,7 @@
 				@click="onClickPage(page.name)"
         :disabled="page.isDisabled"
 				:class="{ active: isPageActive(page.name) }"
+				class="pagination-btn"
       >
         {{ page.name }}
       </button>
@@ -39,7 +40,7 @@
     <li>
       <button
         type="button"
-				class="border px-3"
+				class="pagination-btn"
 				@click="onClickNextPage"
 				:disabled="isInLastPage"
       >
@@ -50,7 +51,7 @@
     <li>
       <button
         type="button"
-				class="border px-3"
+				class="pagination-btn rounded-r-lg"
 				@click="onClickLastPage"
 				:disabled="isInLastPage"
       >
@@ -158,8 +159,10 @@
 </script>
 
 <style scoped>
+.pagination-btn {
+	@apply flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white;
+}
 .active {
-  background-color: #4AAE9B;
-  color: #ffffff;
+  @apply bg-gray-700 text-white;
 }
 </style>
