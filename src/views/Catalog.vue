@@ -8,7 +8,7 @@
 		>
 			<div>
 				<div class="h-80 bg-neutral-600">
-					<img :src="product.thumbnail" :alt="product.title" class="h-full w-full object-cover">
+					<img loading="lazy" :src="product.thumbnail" :alt="product.title" class="h-full w-full object-cover">
 				</div>
 				<h2>Brand: {{ product.brand }}</h2>
 				<p>Description: {{ product.description }}</p>
