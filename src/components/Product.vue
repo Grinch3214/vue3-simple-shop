@@ -1,19 +1,19 @@
 <template>
 	<div>
-		{{ selectedProduct }}
+		{{ productsStore.productId }}
 	</div>
 </template>
 
 <script setup>
-	import { computed } from 'vue'
+	import { onMounted } from 'vue'
 	import { useProductsStore } from '../store/index'
 	import { useRoute } from 'vue-router'
 
 	const productsStore = useProductsStore()
 	const route = useRoute()
 
-	const selectedProduct = computed(() => {
-		return productsStore.products.find((item) => item.id === +route.params.id)
+	onMounted(() => {
+		productsStore.fetchProductID(+route.params.id)
 	})
 
 </script>
