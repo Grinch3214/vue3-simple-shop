@@ -104,10 +104,6 @@
 	const pages = computed(() => {
 		const range = []
 
-		console.log(startPage.value, 'startPage ')
-		console.log(props.maxVisibleButtons, 'props.maxVisibleButtons')
-		console.log(props.totalPages, 'props.totalPages')
-
 		for (
 			let i = startPage.value;
 			i <= Math.min(startPage.value + props.maxVisibleButtons - 1, props.totalPages);
@@ -118,7 +114,7 @@
 				isDisabled: i === props.currentPage
 			})
 		}
-		console.log(range)
+		
 		return range
 	})
 
