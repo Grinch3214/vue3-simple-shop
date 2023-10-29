@@ -1,5 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { URL } from '../constants.js'
 
 export const useProductsStore = defineStore('products', () => {
 	
@@ -8,7 +9,7 @@ export const useProductsStore = defineStore('products', () => {
 
 	const fetchProductsFromDB = async() => {
 		try {
-			await fetch('https://dummyjson.com/products')
+			await fetch(`${URL}/products`)
 			.then(res => res.json())
 			.then(json => { products.value = json.products })
 		} catch(error) {
@@ -18,7 +19,7 @@ export const useProductsStore = defineStore('products', () => {
 
 	const fetchProductID = async(id) => {
 		try {
-			fetch(`https://dummyjson.com/products/${id}`)
+			fetch(`${URL}/products/${id}`)
 			.then(res => res.json())
 			.then(json => {
 				productId.value = json
