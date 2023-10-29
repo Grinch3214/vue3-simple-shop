@@ -6,18 +6,26 @@ export const useProductsStore = defineStore('products', () => {
 	const products = ref([])
 	const productId = ref({})
 
-	const fetchProductsFromDB = () => {
-		fetch('https://dummyjson.com/products')
+	const fetchProductsFromDB = async() => {
+		try {
+			await fetch('https://dummyjson.com/products')
 			.then(res => res.json())
 			.then(json => { products.value = json.products })
+		} catch(error) {
+			console.log('fetchProductsFromDB:', error)
+		}
 	}
 
-	const fetchProductID = (id) => {
-		fetch(`https://dummyjson.com/products/${id}`)
+	const fetchProductID = async(id) => {
+		try {
+			fetch(`https://dummyjson.com/products/${id}`)
 			.then(res => res.json())
 			.then(json => {
 				productId.value = json
 			})
+		} catch(error) {
+			console.log('fetchProductID:', error)
+		} 
 	}
 
 	return {
