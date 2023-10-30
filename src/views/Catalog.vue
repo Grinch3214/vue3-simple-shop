@@ -1,12 +1,12 @@
 <template>
-	<div v-if="productsStore.products.length >= 1" class="flex -mx-4 flex-wrap">
+	<div v-if="productsStore.products.length >= 1" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0">
 		<article
-			class="basis-1/3 px-4 cursor-pointer"
+			class=""
 			v-for="product in productsStore.products"
 			:key="product.id"
 			@click="goToProductpage(product.id)"
 		>
-			<div>
+			<div class="cursor-pointer">
 				<div class="h-80 bg-neutral-600">
 					<img loading="lazy" :src="product.thumbnail" :alt="product.title" class="h-full w-full object-cover">
 				</div>
