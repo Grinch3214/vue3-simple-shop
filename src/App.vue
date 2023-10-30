@@ -1,18 +1,13 @@
 <template>
-	<header class="bg-slate-600 shadow-border-custom">
-		<ul class="flex gap-4 py-5 container mx-auto px-4">
-			<li v-for="item in links" :key="item">
-				<router-link class="text-sky-600" :to="item.url">Go to {{ item.link }}</router-link>
-			</li>
-		</ul>
-	</header>
+	<HeaderComponent />
   <div class="container mx-auto px-4">
-		<Pagination :totalPages="10" :perPage="10" :currentPage="currentPage" @pagechanged="onPageChange" />
 		<RouterView />
+		<Pagination :totalPages="10" :perPage="10" :currentPage="currentPage" @pagechanged="onPageChange" />
 	</div>
 </template>
 
 <script setup>
+import HeaderComponent from './components/HeaderComponent.vue'
 import Pagination from './components/Pagination.vue'
 import { ref } from 'vue'
 	const links = [
