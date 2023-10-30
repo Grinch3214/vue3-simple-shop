@@ -4,7 +4,7 @@
 			v-for="product in productsStore.products"
 			:key="product.id"
 			:card-product="product"
-			@click="goToProductpage(product.id)"
+			@goToProduct="goToProductpage"
 		/>
 	</div>
 </template>

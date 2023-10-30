@@ -6,10 +6,10 @@ module.exports = {
   ],
   theme: {
 		screens: {
-      sm: '520px',
-      md: '768px',
-      lg: '992px',
-      xl: '1310px',
+      sm: '600px',
+      md: '860px',
+      lg: '1024px',
+      xl: '1410px',
     },
     extend: {
 			boxShadow: {
