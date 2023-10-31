@@ -1,7 +1,7 @@
 <template>
 	<div class="star-rating">
 		<span v-for="item in props.starLimit" :key="item" class="star star-nofill"></span>
-		<div class="star-rating-fullfield" :style="{ 'width': ratingWidth }">
+		<div class="star-rating-fullfield" :style="ratingWidthStyle">
 			<span v-for="item in props.starLimit" :key="item" class="star star-fill"></span>
 		</div>
 	</div>
@@ -21,7 +21,11 @@
 	})
 
 	const ratingWidth = computed(() => {
-		return `${+props.rating / props.starLimit * 100}%`
+		return `${+props.rating / props.starLimit * 100}`
+	})
+
+	const ratingWidthStyle = computed(() => {
+		return `width: ${ratingWidth.value}%;`
 	})
 </script>
 
