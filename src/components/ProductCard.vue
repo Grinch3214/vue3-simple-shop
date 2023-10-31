@@ -18,18 +18,27 @@
 		>
 			{{ props.cardProduct.title }}</h2>
 		<p class="text-sm pb-4">{{ props.cardProduct.description }}</p>
-		<p class="mt-auto text-2xl font-extrabold">${{ props.cardProduct.price }}</p>
+		<div class="mt-auto flex justify-between items-center">
+			<p class="text-2xl font-extrabold">${{ props.cardProduct.price }}</p>
+			<RatingStar :rating="props.cardProduct.rating.toFixed(1)" />
+		</div>
 	</article>
 </template>
 
 <script setup>
+	import { computed } from 'vue'
 	import EyeSvg from './icons/EyeSvg.vue'
+	import RatingStar from './RatingStar.vue'
 
 	const props = defineProps({
 		cardProduct: {
 			type: Object,
 			required: true
 		}
+	})
+
+	const ratings = computed(() => {
+		return +props.cardProduct.rating.toFixed(0) / 5 * 10 / 2
 	})
 
 	const emit = defineEmits(['goToProduct'])
