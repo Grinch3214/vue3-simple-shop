@@ -19,7 +19,7 @@
 	const router = useRouter()
 
 	const goToProductpage = (id) => {
-		router.push({ name: 'Product', params: { id } })
+		router.push({ name: 'ProductPage', params: { id } })
 	}
 
 	onMounted(() => {
