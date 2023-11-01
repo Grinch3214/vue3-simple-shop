@@ -3,6 +3,10 @@ import { defineStore } from 'pinia'
 import { URL } from '../constants.js'
 
 export const useProductsStore = defineStore('products', () => {
+
+	const cart = ref([])
+
+	const openCart = ref(false)
 	
 	const products = ref([])
 	const productId = ref({})
@@ -33,6 +37,8 @@ export const useProductsStore = defineStore('products', () => {
 		products,
 		fetchProductsFromDB,
 		fetchProductID,
-		productId
+		productId,
+		openCart,
+		cart
 	}
 })
