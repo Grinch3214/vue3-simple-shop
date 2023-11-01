@@ -1,7 +1,7 @@
 <template>
 	<div class="w-full bg-white fixed top-0 h-full shadow-2xl md:w-[45vw] xl:w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px]" :class="classChangeCart">
-		<div class="flex items-center justify-between py-5">
-			<div class="text-xs font-extrabold uppercase">Shopping Bag (0)</div>
+		<div class="flex items-center justify-between py-6 border-b mb-7">
+			<div class="text-xs font-extrabold uppercase">Shopping Bag ({{ productsStore.cart.length }})</div>
 			<div class="arrow-right" @click="openCart"></div>
 		</div>
 	</div>

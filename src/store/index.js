@@ -4,6 +4,8 @@ import { URL } from '../constants.js'
 
 export const useProductsStore = defineStore('products', () => {
 
+	const cart = ref([])
+
 	const openCart = ref(false)
 	
 	const products = ref([])
@@ -37,5 +39,6 @@ export const useProductsStore = defineStore('products', () => {
 		fetchProductID,
 		productId,
 		openCart,
+		cart
 	}
 })

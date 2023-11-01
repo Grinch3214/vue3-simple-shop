@@ -3,7 +3,7 @@
 		<div class="h-[300px] mb-4 relative overflow-hidden group transition rounded-t-md">
 			<img loading="lazy" width="300" height="300" :src="props.cardProduct.thumbnail" :alt="props.cardProduct.title" class="w-full h-full object-cover group-hover:scale-110 duration-200">
 			<div class="absolute top-2 -right-11 flex gap-2 flex-col p-2 bg-slate-500/60 rounded-md opacity-0 group-hover:opacity-100 group-hover:right-2 transition-all duration-300">
-				<button class="bg-red-500/70 h-9 w-9 plus block relative rounded-md"></button>
+				<button @click="addToCart(props.cardProduct)" class="bg-red-500/70 h-9 w-9 plus block relative rounded-md"></button>
 				<button
 					@click="goToProduct(props.cardProduct.id)"
 					class="bg-white/90 h-9 w-9 flex justify-center items-center rounded-md"
@@ -29,6 +29,9 @@
 	import { computed } from 'vue'
 	import EyeSvg from './icons/EyeSvg.vue'
 	import RatingStar from './RatingStar.vue'
+	import { useProductsStore } from '../store'
+
+	const productsStore = useProductsStore()
 
 	const props = defineProps({
 		cardProduct: {
@@ -45,6 +48,18 @@
 
 	const goToProduct = (id) => {
 		emit('goToProduct', id)
+	}
+
+	const addToCart = (product) => {
+		let cart = productsStore.cart.find(item => {
+			return item.id === product.id
+		})
+
+		if (cart) {
+			cart.quality++
+		} else {
+			productsStore.cart.push({ ...product, quality: 1 })
+		}
 	}
 </script>
 
