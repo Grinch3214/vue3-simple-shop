@@ -10,6 +10,9 @@
 
 <script setup>
 import HeaderComponent from './components/HeaderComponent.vue'
+
+
+
 // import Pagination from './components/Pagination.vue'
 // import { ref } from 'vue'
 

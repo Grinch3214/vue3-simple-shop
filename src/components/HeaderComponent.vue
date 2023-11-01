@@ -6,7 +6,7 @@
 				<router-link to="/">Catalog</router-link>
 			</li>
 			<li>
-				<CartIcon width="40px" height="40px" @click="goToCart" />
+				<CartIcon width="40px" height="40px" class="cursor-pointer" @click="openCart" />
 			</li>
 		</ul>
 		</div>
@@ -14,13 +14,14 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+import { useProductsStore } from '../store'
 import CartIcon from './icons/CartIcon.vue'
-import { useRouter } from 'vue-router'
 
-const router = useRouter()
+const productsStore = useProductsStore()
 
-const goToCart = () => {
-	router.push({ name: 'CartComponent' })
+const openCart = () => {
+	productsStore.openCart = true
 }
 
 </script>
