@@ -7,7 +7,7 @@
     viewBox="0 0 24 24"
   >
     <path
-      stroke-width="1.5"
+      stroke-width="1"
       d="M7.5 18a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM16.5 18a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"
     />
     <path
@@ -16,7 +16,7 @@
     />
     <path
       stroke-linecap="round"
-      stroke-width="1.5"
+      stroke-width="1"
       d="M16.5 6.5 15 15M9 6.5l1.5 8.5"
     />
   </svg>

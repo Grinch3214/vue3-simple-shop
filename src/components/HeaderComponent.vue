@@ -6,7 +6,7 @@
 				<router-link to="/">Catalog</router-link>
 			</li>
 			<li>
-				<CartIcon width="40px" height="40px" class="cursor-pointer" @click="openCart" />
+				<CartIcon width="30px" height="30px" class="cursor-pointer" @click="openCart" />
 			</li>
 		</ul>
 		</div>
@@ -14,7 +14,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import { useProductsStore } from '../store'
 import CartIcon from './icons/CartIcon.vue'
 

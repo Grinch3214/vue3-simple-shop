@@ -1,4 +1,5 @@
 <template>
+	<SideBar />
 	<HeaderComponent />
 	<main>
 		<section class="container mx-auto px-4">
@@ -9,7 +10,8 @@
 </template>
 
 <script setup>
-import HeaderComponent from './components/HeaderComponent.vue'
+	import HeaderComponent from './components/HeaderComponent.vue'
+	import SideBar from './views/SideBar.vue'
 
 
 
