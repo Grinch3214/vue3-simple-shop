@@ -5,8 +5,9 @@
 			<li>
 				<router-link to="/">Catalog</router-link>
 			</li>
-			<li>
-				<CartIcon width="30px" height="30px" class="cursor-pointer" @click="openCart" />
+			<li class="relative cursor-pointer" @click="openCart">
+				<span class="absolute -top-2 -right-3 bg-red-500/70 text-[12px] font-extrabold rounded-full w-5 h-5 flex items-center justify-center">{{ productsStore.cart.length }}</span>
+				<CartIcon width="30px" height="30px" />
 			</li>
 		</ul>
 		</div>
