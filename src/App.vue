@@ -1,10 +1,10 @@
 <template>
 	<HeaderComponent />
 	<main>
-		<div class="container mx-auto px-4">
+		<section class="container mx-auto px-4">
 		<RouterView />
 		<!-- <Pagination :totalPages="10" :perPage="10" :currentPage="currentPage" @pagechanged="onPageChange" /> -->
-	</div>
+	</section>
 	</main>
 </template>
 
