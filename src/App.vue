@@ -1,26 +1,24 @@
 <template>
 	<HeaderComponent />
-  <div class="container mx-auto px-4">
+	<main>
+		<div class="container mx-auto px-4">
 		<RouterView />
-		<Pagination :totalPages="10" :perPage="10" :currentPage="currentPage" @pagechanged="onPageChange" />
+		<!-- <Pagination :totalPages="10" :perPage="10" :currentPage="currentPage" @pagechanged="onPageChange" /> -->
 	</div>
+	</main>
 </template>
 
 <script setup>
 import HeaderComponent from './components/HeaderComponent.vue'
-import Pagination from './components/Pagination.vue'
-import { ref } from 'vue'
-	const links = [
-		{ link: 'Catalog', url: '/' },
-		{ link: 'Product', url: '/product' }
-	]
+// import Pagination from './components/Pagination.vue'
+// import { ref } from 'vue'
 
-	const currentPage = ref(1)
+	// const currentPage = ref(1)
 
-	const onPageChange = (page) => {
-		console.log(page, 'page APP')
-		currentPage.value = page
-	}
+	// const onPageChange = (page) => {
+	// 	console.log(page, 'page APP')
+	// 	currentPage.value = page
+	// }
 </script>
 
 
