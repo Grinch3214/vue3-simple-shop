@@ -24,7 +24,7 @@
 					<div class="text-sm font-semibold">${{ cartItem.price }}</div>
 				</div>
 			</div>
-			<div class="text-sm font-semibold ml-auto">$ {{ totalSum }}</div>
+			<div class="text-sm font-semibold ml-auto">${{ totalSum }}</div>
 		</div>
 	</div>
 </template>
