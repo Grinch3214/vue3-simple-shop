@@ -1,16 +1,19 @@
 <template>
 	<div class="w-full bg-white fixed top-0 h-[100vh] shadow-2xl md:w-[45vw] xl:w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px]" :class="classChangeCart">
 		<div class="flex items-center justify-between py-6 border-b mb-7">
+			<button class="arrow-right" @click="openCart"></button>
 			<div class="text-xs font-extrabold uppercase">Shopping Bag ({{ productsStore.cart.length }})</div>
-			<div class="arrow-right" @click="openCart"></div>
 		</div>
 
-		<div v-if="productsStore.cart.length >= 1" class="overflow-y-auto overflow-x-hidden h-calc">
+		<div v-if="productsStore.cart.length >= 1" class="overflow-y-auto overflow-x-hidden h-calc pr-4">
 			<ul>
 				<li v-for="item in productsStore.cart" :key="item.id">
-					<CartItem :cart-item="item" />
+					<CartItem :cart-item="item" @quality-reduce="qualityReduce" @quality-added="qualityAdded" />
 				</li>
 			</ul>
+			<div class="text-sm uppercase font-extrabold flex justify-between items-center">
+				<span>Total:</span>
+				<span class="text-blue-900 text-base">${{ totalCartSum }}</span> </div>
 		</div>
 		<div v-else>
 			Clear Cart
@@ -29,9 +32,29 @@
 		productsStore.openCart = false
 	}
 
+	const totalCartSum = computed(() => {
+		if (productsStore.cart != 0) {
+			return productsStore.cart.reduce((acc, cartItem) => {
+				return acc + (cartItem.price * cartItem.quality)
+		}, 0)
+		}
+	})
+
 	const classChangeCart = computed(() => {
 		return productsStore.openCart ? 'right-0' : '-right-full'
 	})
+
+	const qualityAdded = (e) => {
+		e.quality++
+	}
+
+	const qualityReduce = (e) => {
+		if(e.quality === 1) {
+			return 1
+		} else {
+			e.quality--
+		}
+	}
 
 </script>
 
