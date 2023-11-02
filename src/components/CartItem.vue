@@ -24,7 +24,7 @@
 					<div class="text-sm font-semibold">${{ cartItem.price }}</div>
 				</div>
 			</div>
-			<div class="text-sm font-semibold ml-auto">$ {{ cartItem.price }}</div>
+			<div class="text-sm font-semibold ml-auto">$ {{ totalSum }}</div>
 		</div>
 	</div>
 </template>
@@ -38,6 +38,10 @@
 			type: Object,
 			required: true
 		}
+	})
+
+	const totalSum = computed(() => {
+		return props.cartItem.price * props.cartItem.quality
 	})
 
 	const emit = defineEmits(['qualityReduce', 'qualityAdded'])
