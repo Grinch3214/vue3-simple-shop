@@ -137,7 +137,7 @@
 	}
 
 	const onClickPreviousPage = () => {
-		emit('pagechanged', props.currentPage -1)
+		emit('pagechanged', props.currentPage - 1)
 	}
 
 	const onClickPage = (page) => {

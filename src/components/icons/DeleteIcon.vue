@@ -20,7 +20,7 @@
 	const props = defineProps({
 		stroke: {
 			type: String,
-			default: '#fff'
+			default: '#1C274C'
 		},
 		width: {
 			type: String,
