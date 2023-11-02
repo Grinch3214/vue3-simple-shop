@@ -1,8 +1,19 @@
 <template>
-	<div class="w-full bg-white fixed top-0 h-full shadow-2xl md:w-[45vw] xl:w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px]" :class="classChangeCart">
+	<div class="w-full bg-white fixed top-0 h-[100vh] shadow-2xl md:w-[45vw] xl:w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px]" :class="classChangeCart">
 		<div class="flex items-center justify-between py-6 border-b mb-7">
 			<div class="text-xs font-extrabold uppercase">Shopping Bag ({{ productsStore.cart.length }})</div>
 			<div class="arrow-right" @click="openCart"></div>
+		</div>
+
+		<div v-if="productsStore.cart.length >= 1" class="overflow-y-auto overflow-x-hidden h-calc">
+			<ul>
+				<li v-for="item in productsStore.cart" :key="item.id">
+					<CartItem :cart-item="item" />
+				</li>
+			</ul>
+		</div>
+		<div v-else>
+			Clear Cart
 		</div>
 	</div>
 </template>
@@ -10,6 +21,7 @@
 <script setup>
 	import { computed } from 'vue'
 	import { useProductsStore } from '../store'
+	import CartItem from '../components/CartItem.vue'
 
 	const productsStore = useProductsStore()
 

@@ -14,7 +14,10 @@ module.exports = {
     extend: {
 			boxShadow: {
         'border-custom': '0 0 5px 0 rgba(71, 85, 105, 1)',
-      }
+      },
+			height: {
+				'calc': 'calc(100vh - 150px)',
+			}
 		},
   },
   plugins: [],
