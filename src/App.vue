@@ -1,16 +1,14 @@
 <template>
 	<SideBar />
-	<HeroComponent />
-	<main class="pt-[120px]">
-		<section class="container mx-auto px-4">
+	<HeaderComponent />
+	<main>
 		<RouterView />
 		<!-- <Pagination :totalPages="10" :perPage="10" :currentPage="currentPage" @pagechanged="onPageChange" /> -->
-	</section>
 	</main>
 </template>
 
 <script setup>
-	import HeroComponent from './views/HeroComponent.vue'
+	import HeaderComponent from './components/HeaderComponent.vue'
 	import SideBar from './views/SideBar.vue'
 
 

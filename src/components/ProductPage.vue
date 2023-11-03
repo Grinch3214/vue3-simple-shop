@@ -1,5 +1,5 @@
 <template>
-	<div class="flex">
+	<div class="flex pt-[120px]">
 		<Carousel :wrap-around="true" class="basis-1/2 flex-grow-1">
 			<Slide v-for="image in productsStore.productId.images" :key="image">
 				<div class="carousel-item flex items-center justify-center h-[300px]">
