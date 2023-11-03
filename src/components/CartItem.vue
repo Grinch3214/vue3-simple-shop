@@ -2,7 +2,10 @@
 	<div class="border-b-2 bg-slate-100 mb-4 p-3 rounded-lg transition-all duration-300 hover:shadow-sm min-h-[150px] flex flex-col justify-between">
 		<div class="flex justify-between gap-4 mb-2">
 			<h2 class="text-sm font-semibold uppercase">{{ cartItem.title }}</h2>
-			<button class="cursor-pointer transition-all duration-300 hover:bg-zinc-400/20 active:bg-zinc-400/40 rounded-md">
+			<button
+				class="cursor-pointer transition-all duration-300 hover:bg-zinc-400/20 active:bg-zinc-400/40 rounded-md"
+				@click="removeItem(cartItem.id)"
+			>
 				<DeleteIcon width="30px" height="30px" />
 			</button>
 		</div>
@@ -21,7 +24,7 @@
 							class="text-xl leading-3 p-2 transition-all duration-300 hover:bg-zinc-400/20 active:bg-zinc-400/40 rounded-md w-7"
 						>+</button>
 					</div>
-					<div class="text-sm font-semibold">${{ cartItem.price }}</div>
+					<div class="text-sm font-semibold text-gray-500">${{ cartItem.price }}</div>
 				</div>
 			</div>
 			<div class="text-sm font-semibold ml-auto">${{ totalSum }}</div>
@@ -44,12 +47,16 @@
 		return props.cartItem.price * props.cartItem.quality
 	})
 
-	const emit = defineEmits(['qualityReduce', 'qualityAdded'])
+	const emit = defineEmits(['qualityReduce', 'qualityAdded', 'removeCartId'])
 
 	const reduceQuality = (e) => {
 		emit('qualityReduce', e)
 	}
 	const addQuality = (e) => {
 		emit('qualityAdded', e)
+	}
+
+	const removeItem = (e) => {
+		emit('removeCartId', e)
 	}
 </script>

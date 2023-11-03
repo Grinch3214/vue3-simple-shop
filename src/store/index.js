@@ -11,6 +11,11 @@ export const useProductsStore = defineStore('products', () => {
 	const products = ref([])
 	const productId = ref({})
 
+	const lockedBody = () => {
+		const body = document.querySelector('body')
+		body.style.overflow = openCart.value ? 'hidden' : ''
+	}
+
 	const fetchProductsFromDB = async() => {
 		try {
 			await fetch(`${URL}/products`)
@@ -39,6 +44,7 @@ export const useProductsStore = defineStore('products', () => {
 		fetchProductID,
 		productId,
 		openCart,
-		cart
+		cart,
+		lockedBody
 	}
 })
