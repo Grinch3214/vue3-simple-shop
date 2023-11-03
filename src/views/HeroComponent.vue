@@ -14,14 +14,14 @@
 	import { ref, computed } from 'vue'
 	import HeaderComponent from '../components/HeaderComponent.vue'
 
-	const images = ref(['hero_1.jpg', 'hero_2.jpg', 'hero_3.jpg', 'hero_4.jpg'])
+	const images = ref(['hero_1.webp', 'hero_2.webp', 'hero_3.webp', 'hero_4.webp'])
 	const currentImage = ref(0)
 	const interval = ref(null)
 
 	const changeImage = () => {
 		interval.value = setInterval(() => {
 			currentImage.value++
-		}, 10000)
+		}, 8000)
 	}
 	changeImage()
 
