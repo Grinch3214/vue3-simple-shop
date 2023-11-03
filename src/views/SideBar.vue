@@ -8,7 +8,12 @@
 		<div v-if="productsStore.cart.length >= 1" class="overflow-y-auto overflow-x-hidden h-calc pr-4">
 			<ul>
 				<li v-for="item in productsStore.cart" :key="item.id">
-					<CartItem :cart-item="item" @quality-reduce="qualityReduce" @quality-added="qualityAdded" />
+					<CartItem
+					  :cart-item="item"
+					  @quality-added="qualityAdded"
+					  @quality-reduce="qualityReduce"
+					  @remove-cart-id="removeCartId"
+					/>
 				</li>
 			</ul>
 			<div class="text-sm uppercase font-extrabold flex justify-between items-center">
@@ -33,10 +38,10 @@
 	}
 
 	const totalCartSum = computed(() => {
-		if (productsStore.cart != 0) {
+		if (productsStore.cart !== 0) {
 			return productsStore.cart.reduce((acc, cartItem) => {
 				return acc + (cartItem.price * cartItem.quality)
-		}, 0)
+			}, 0)
 		}
 	})
 
@@ -49,11 +54,14 @@
 	}
 
 	const qualityReduce = (e) => {
-		if(e.quality === 1) {
-			return 1
-		} else {
+		if (e.quality > 1) {
 			e.quality--
 		}
+		return e.quality
+	}
+
+	const removeCartId = (id) => {
+		productsStore.cart = productsStore.cart.filter((item) => item.id !== id);
 	}
 
 </script>
