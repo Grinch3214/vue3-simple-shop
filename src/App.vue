@@ -1,6 +1,6 @@
 <template>
 	<SideBar />
-	<HeaderComponent />
+	<HeroComponent />
 	<main class="pt-[120px]">
 		<section class="container mx-auto px-4">
 		<RouterView />
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-	import HeaderComponent from './components/HeaderComponent.vue'
+	import HeroComponent from './views/HeroComponent.vue'
 	import SideBar from './views/SideBar.vue'
 
 
