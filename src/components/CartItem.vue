@@ -24,7 +24,7 @@
 							class="text-xl leading-3 p-2 transition-all duration-300 hover:bg-zinc-400/20 active:bg-zinc-400/40 rounded-md w-7"
 						>+</button>
 					</div>
-					<div class="text-sm font-semibold">${{ cartItem.price }}</div>
+					<div class="text-sm font-semibold text-gray-500">${{ cartItem.price }}</div>
 				</div>
 			</div>
 			<div class="text-sm font-semibold ml-auto">${{ totalSum }}</div>
