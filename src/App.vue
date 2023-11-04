@@ -1,11 +1,13 @@
 <template>
-	<SideBar />
-	<HeaderComponent />
-	<main class="pb-10 md:pb-20">
-		<RouterView />
-		<!-- <Pagination :totalPages="10" :perPage="10" :currentPage="currentPage" @pagechanged="onPageChange" /> -->
-	</main>
-	<FooterComponent />
+	<div class="grid grid-rows-[1fr_auto] min-h-screen">
+		<SideBar />
+		<HeaderComponent />
+		<main class="pb-10 md:pb-20">
+			<RouterView />
+			<!-- <Pagination :totalPages="10" :perPage="10" :currentPage="currentPage" @pagechanged="onPageChange" /> -->
+		</main>
+		<FooterComponent />
+	</div>
 </template>
 
 <script setup>
