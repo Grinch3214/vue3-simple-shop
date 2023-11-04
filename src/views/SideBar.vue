@@ -5,7 +5,7 @@
 			<div class="text-xs font-extrabold uppercase">Shopping Bag ({{ productsStore.cart.length }})</div>
 		</div>
 
-		<div v-if="productsStore.cart.length >= 1" class="overflow-y-auto overflow-x-hidden h-calc pr-4">
+		<div v-if="productsStore.cart.length >= 1" class="overflow-y-auto overflow-x-hidden h-calc pr-4 flex flex-col">
 			<ul>
 				<li v-for="item in productsStore.cart" :key="item.id">
 					<CartItem
@@ -16,9 +16,14 @@
 					/>
 				</li>
 			</ul>
-			<div class="text-sm uppercase font-extrabold flex justify-between items-center">
+			<div class="text-sm uppercase font-extrabold flex justify-between items-center border-t pt-3 mt-auto mb-3">
 				<span>Total:</span>
-				<span class="text-blue-900 text-base">${{ totalCartSum }}</span> </div>
+				<span class="text-blue-900 text-base">${{ totalCartSum }}</span>
+			</div>
+			<div>
+				<button class="bg-gray-200 hover:bg-gray-300 text-center p-3 text-gray-900 w-full font-medium rounded-md mb-3">View cart</button>
+				<button class="bg-black hover:bg-black/90 text-center p-3 text-white w-full font-medium rounded-md">Checkout</button>
+			</div>
 		</div>
 		<div v-else class="min-h-[70%] tracking-widest text-2xl md:text-3xl font-semibold uppercase before:bg-[url('/src/assets/images/basket-logo.png')] before:bg-no-repeat before:bg-[length:350px_350px] before:bg-center relative before:absolute before:block before:inset-0 before:opacity-10 before:-z-10 text-center">
 			Your cart is empty!
