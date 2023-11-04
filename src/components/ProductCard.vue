@@ -1,8 +1,8 @@
 <template>
-	<article class="bg-white p-3 rounded-md flex flex-col">
+	<article class="bg-white p-3 rounded-md flex flex-col shadow-md">
 		<div class="h-[300px] mb-4 relative overflow-hidden group transition rounded-t-md">
 			<img loading="lazy" width="300" height="300" :src="props.cardProduct.thumbnail" :alt="props.cardProduct.title" class="w-full h-full object-cover group-hover:scale-110 duration-200">
-			<div class="absolute top-2 -right-11 flex gap-2 flex-col p-2 bg-slate-500/60 rounded-md opacity-0 group-hover:opacity-100 group-hover:right-2 transition-all duration-300">
+			<div class="absolute top-2 right-2 lg:-right-11 flex gap-2 flex-col p-2 bg-slate-500/60 rounded-md lg:opacity-0 group-hover:opacity-100 group-hover:right-2 transition-all duration-300">
 				<button @click="addToCart(props.cardProduct)" class="transition-all duration-300 bg-red-500/70 hover:bg-red-600/70 active:bg-red-600/80 h-9 w-9 plus block relative rounded-md"></button>
 				<button
 					@click="goToProduct(props.cardProduct.id)"
