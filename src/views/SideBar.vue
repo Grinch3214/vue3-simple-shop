@@ -20,8 +20,8 @@
 				<span>Total:</span>
 				<span class="text-blue-900 text-base">${{ totalCartSum }}</span> </div>
 		</div>
-		<div v-else>
-			Clear Cart
+		<div v-else class="min-h-[70%] tracking-widest text-2xl md:text-3xl font-semibold uppercase before:bg-[url('/src/assets/images/basket-logo.png')] before:bg-no-repeat before:bg-[length:350px_350px] before:bg-center relative before:absolute before:block before:inset-0 before:opacity-10 before:-z-10 text-center">
+			Your cart is empty!
 		</div>
 	</div>
 </template>
