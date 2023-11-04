@@ -2,7 +2,7 @@
 	<!-- :style="{ backgroundImage: `linear-gradient(rgba(0,0,0, .5), rgba(0,0,0, .5)), url(${getImageUrl(imageNow)})` }" -->
 	<div
 		class="md:h-screen h-[500px] bg-no-repeat bg-center bg-cover transition-all duration-300 pt-[120px]"
-		:style="{ backgroundImage: `linear-gradient(rgba(0,0,0, .5), rgba(0,0,0, .5)), url(${getImageUrl('hero_3.webp')})` }"
+		:style="{ backgroundImage: `linear-gradient(rgba(0,0,0, .5), rgba(0,0,0, .5)), url(${getImageUrl('hero_4.webp')})` }"
 	>
 		<div class="container mx-auto px-4 flex items-center h-full">
 			<h1 class="pt-3 font-semibold text-white text-5xl md:text-8xl uppercase relative before:block before:absolute before:top-0 before:left-0 before:w-[150px] before:h-[5px] before:bg-red-600 tracking-[14px]">Big sale of <br> <span class="font-extrabold">items!</span></h1>
