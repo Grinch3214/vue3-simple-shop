@@ -1,5 +1,5 @@
 <template>
-	<div class="flex gap-6 items-center pt-10 md:pt-20 container mx-auto">
+	<div class="flex gap-6 items-center pt-[120px] container mx-auto">
 		<div class="basis-[500px] flex-shrink-0 flex-grow-0">
 			<Carousel>
 				<Slide v-for="image in productsStore.productId.images" :key="image">
@@ -13,12 +13,17 @@
 			</Carousel>
 		</div>
 		<div class="basis-auto flex-grow-1">
-			<h1 class="text-2xl">{{ productsStore.productId.title }}</h1>
-			<div class="flex gap-4">
-				<p>Rating</p>
-				<p>{{ ratingFix }}</p>
+			<h1 class="text-2xl mb-3 uppercase font-semibold">{{ productsStore.productId.title }}</h1>
+			<div class="flex gap-2 mb-4">
+				<RatingStar :rating="ratingFix" />
+				<p class="text-sm font-extrabold"> / {{ ratingFix }}</p>
 			</div>
-			{{ productsStore.productId }}
+			<p class="mb-4"> {{ productsStore.productId.description }} </p>
+			<div>{{ productsStore.productId }}</div>
+			<div>
+				<span class="text-sm uppercase font-semibold mr-3">Category:</span>
+				<p class="mb-4 inline-block px-2 bg-red-500/80 text-white font-semibold rounded-md">{{ productsStore.productId.category }}</p>
+			</div>
 		</div>
 	</div>
 </template>
@@ -28,6 +33,7 @@
 	import { useProductsStore } from '../store/index'
 	import { useRoute } from 'vue-router'
 	import { Carousel, Slide, Navigation } from 'vue3-carousel'
+	import RatingStar from './RatingStar.vue'
 
 	import 'vue3-carousel/dist/carousel.css'
 
