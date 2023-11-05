@@ -13,21 +13,27 @@
 			</Carousel>
 		</div>
 		<div class="basis-auto flex-grow-1">
-			<h1>{{ productsStore.productId.title }}</h1>
-			<div>
-				<p>{{ productsStore.productId.rating }}</p>
-				<p>Rating</p>
+			<h1 class="text-2xl mb-3 uppercase font-semibold">{{ productsStore.productId.title }}</h1>
+			<div class="flex gap-2 mb-4">
+				<RatingStar :rating="ratingFix" />
+				<p class="text-sm font-extrabold"> / {{ ratingFix }}</p>
 			</div>
-			{{ productsStore.productId }}
+			<p class="mb-4"> {{ productsStore.productId.description }} </p>
+			<div>{{ productsStore.productId }}</div>
+			<div>
+				<span class="text-sm uppercase font-semibold mr-3">Category:</span>
+				<p class="mb-4 inline-block px-2 bg-red-500/80 text-white font-semibold rounded-md">{{ productsStore.productId.category }}</p>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script setup>
-	import { onMounted } from 'vue'
+	import { onMounted, computed } from 'vue'
 	import { useProductsStore } from '../store/index'
 	import { useRoute } from 'vue-router'
 	import { Carousel, Slide, Navigation } from 'vue3-carousel'
+	import RatingStar from './RatingStar.vue'
 
 	import 'vue3-carousel/dist/carousel.css'
 
@@ -36,8 +42,11 @@
 
 	onMounted(() => {
 		productsStore.fetchProductID(+route.params.id)
-	})	
+	})
 
+	const ratingFix = computed(() => {
+		return productsStore.productId.rating ? productsStore.productId.rating.toFixed(1) : ''
+	})
 </script>
 
 <style>

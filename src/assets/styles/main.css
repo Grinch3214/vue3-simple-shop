@@ -31,3 +31,8 @@ body {
 	font-weight: 400;
 	font-size: 20px;
 }
+
+button.carousel__next--disabled,
+button.carousel__prev--disabled {
+	cursor: default;
+}
