@@ -1,5 +1,5 @@
 <template>
-	<div class="flex gap-6 items-center pt-[120px] container mx-auto">
+	<div class="flex gap-6 items-center pt-10 md:pt-20 container mx-auto">
 		<div class="basis-[500px] flex-shrink-0 flex-grow-0">
 			<Carousel>
 				<Slide v-for="image in productsStore.productId.images" :key="image">
@@ -13,10 +13,10 @@
 			</Carousel>
 		</div>
 		<div class="basis-auto flex-grow-1">
-			<h1>{{ productsStore.productId.title }}</h1>
-			<div>
-				<p>{{ productsStore.productId.rating }}</p>
+			<h1 class="text-2xl">{{ productsStore.productId.title }}</h1>
+			<div class="flex gap-4">
 				<p>Rating</p>
+				<p>{{ ratingFix }}</p>
 			</div>
 			{{ productsStore.productId }}
 		</div>
@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-	import { onMounted } from 'vue'
+	import { onMounted, computed } from 'vue'
 	import { useProductsStore } from '../store/index'
 	import { useRoute } from 'vue-router'
 	import { Carousel, Slide, Navigation } from 'vue3-carousel'
@@ -36,8 +36,11 @@
 
 	onMounted(() => {
 		productsStore.fetchProductID(+route.params.id)
-	})	
+	})
 
+	const ratingFix = computed(() => {
+		return productsStore.productId.rating ? productsStore.productId.rating.toFixed(1) : ''
+	})
 </script>
 
 <style>
