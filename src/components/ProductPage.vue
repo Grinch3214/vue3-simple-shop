@@ -13,16 +13,19 @@
 			</Carousel>
 		</div>
 		<div class="basis-auto flex-grow-1">
-			<h1 class="text-2xl mb-3 uppercase font-semibold">{{ productsStore.productId.title }}</h1>
+			<h1 class="text-2xl mb-2 uppercase font-semibold">{{ productsStore.productId.title }}</h1>
+			<div class="flex items-center gap-3 mb-6">
+				<span class="text-sm uppercase font-semibold">Category:</span>
+				<p class="inline-block px-2 bg-red-500/80 text-white text-xs font-semibold rounded-md">{{ productsStore.productId.category }}</p>
+			</div>
 			<div class="flex gap-2 mb-4">
 				<RatingStar :rating="ratingFix" />
 				<p class="text-sm font-extrabold"> / {{ ratingFix }}</p>
 			</div>
 			<p class="mb-4"> {{ productsStore.productId.description }} </p>
-			<div>{{ productsStore.productId }}</div>
 			<div>
-				<span class="text-sm uppercase font-semibold mr-3">Category:</span>
-				<p class="mb-4 inline-block px-2 bg-red-500/80 text-white font-semibold rounded-md">{{ productsStore.productId.category }}</p>
+				<p class="text-md font-semibold mb-4">${{ productsStore.productId.price }}</p>
+				<button class="px-4 py-1 bg-zinc-900 text-white rounded-md">Add to cart</button>
 			</div>
 		</div>
 	</div>
