@@ -4,7 +4,7 @@
 			<Carousel>
 				<Slide v-for="image in productsStore.productId.images" :key="image">
 					<div class="carousel-item flex items-center justify-center h-[400px]">
-						<img :src="image" alt="" class="w-auto h-full">
+						<img :src="image" alt="" class="w-auto h-full object-contain">
 					</div>
 				</Slide>
 				<template #addons>
