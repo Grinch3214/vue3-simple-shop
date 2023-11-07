@@ -4,7 +4,7 @@
 			<Carousel>
 				<Slide v-for="image in productsStore.productId.images" :key="image">
 					<div class="carousel-item flex items-center justify-center h-[400px]">
-						<img :src="image" alt="" class="w-auto h-full">
+						<img :src="image" alt="" class="w-auto h-full object-contain">
 					</div>
 				</Slide>
 				<template #addons>
@@ -25,7 +25,7 @@
 			<p class="mb-4"> {{ productsStore.productId.description }} </p>
 			<div>
 				<p class="text-md font-semibold mb-4">${{ productsStore.productId.price }}</p>
-				<button class="px-4 py-1 bg-zinc-900 text-white rounded-md">Add to cart</button>
+				<button @click="addToCart(productsStore.productId)" class="px-4 py-1 bg-zinc-900 text-white rounded-md">Add to cart</button>
 			</div>
 		</div>
 	</div>
@@ -46,6 +46,15 @@
 	onMounted(() => {
 		productsStore.fetchProductID(+route.params.id)
 	})
+
+	const addToCart = (prod) => {
+		console.log(prod)
+		let cart = productsStore.cart.find(item => {
+			return item.id === prod.id
+		})
+
+		cart ? cart.quality++ : productsStore.cart.push({ ...prod, quality: 1 })
+	}
 
 	const ratingFix = computed(() => {
 		return productsStore.productId.rating ? productsStore.productId.rating.toFixed(1) : ''

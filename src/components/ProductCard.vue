@@ -40,10 +40,6 @@
 		}
 	})
 
-	const ratings = computed(() => {
-		return +props.cardProduct.rating.toFixed(0) / 5 * 10 / 2
-	})
-
 	const emit = defineEmits(['goToProduct'])
 
 	const goToProduct = (id) => {
