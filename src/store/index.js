@@ -18,7 +18,7 @@ export const useProductsStore = defineStore('products', () => {
 
 	const fetchProductsFromDB = async() => {
 		try {
-			await fetch(`${URL}/products`)
+			await fetch(`${URL}/products?limit=0`)
 			.then(res => res.json())
 			.then(json => { products.value = json.products })
 		} catch(error) {
