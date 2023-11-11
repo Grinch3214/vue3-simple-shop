@@ -9,14 +9,18 @@
 				@goToProduct="goToProductpage"
 			/>
 		</div>
+		<div>
+			<Pagination :totalPages="10" :perPage="10" :currentPage="currentPage" @pagechanged="onPageChange" />
+		</div>
 	</section>
 </template>
 
 <script setup>
 	import HeroComponent from './HeroComponent.vue'
 	import ProductCard from '../components/ProductCard.vue'
+	import Pagination from '../components/Pagination.vue'
 	import { useProductsStore } from '../store'
-	import { onMounted } from 'vue'
+	import { onMounted, ref } from 'vue'
 	import { useRouter } from 'vue-router'
 
 	const productsStore = useProductsStore()
@@ -29,6 +33,14 @@
 	onMounted(() => {
 		productsStore.fetchProductsFromDB()
 	})
+
+	// pagination
+	const currentPage = ref(1)
+
+	const onPageChange = (page) => {
+		console.log(page, 'page Catalog')
+		currentPage.value = page
+	}
 
 
 </script>
