@@ -1,10 +1,10 @@
 <template>
-	<div class="flex gap-6 items-center pt-[120px] container mx-auto">
-		<div class="basis-[500px] flex-shrink-0 flex-grow-0">
+	<div class="md:flex md:gap-6 md:items-center pt-[120px] container mx-auto px-4">
+		<div class="basis-[500px] flex-shrink-0 flex-grow-0 mb-5 md:mb-0">
 			<Carousel>
 				<Slide v-for="image in productsStore.productId.images" :key="image">
-					<div class="carousel-item flex items-center justify-center h-[400px]">
-						<img :src="image" alt="" class="w-auto h-full object-contain">
+					<div class="carousel-item flex items-center justify-center h-[250px] md:h-[400px]">
+						<img :src="image" :alt="productsStore.productId.title" width="380" height="250" class="w-auto h-full object-contain" loading="lazy">
 					</div>
 				</Slide>
 				<template #addons>
@@ -25,7 +25,7 @@
 			<p class="mb-4"> {{ productsStore.productId.description }} </p>
 			<div>
 				<p class="text-md font-semibold mb-4">${{ productsStore.productId.price }}</p>
-				<button @click="addToCart(productsStore.productId)" class="px-4 py-1 bg-zinc-900 text-white rounded-md">Add to cart</button>
+				<button @click="addToCart(productsStore.productId)" class="px-4 py-1 bg-zinc-900 text-white rounded-md w-full md:w-auto">Add to cart</button>
 			</div>
 		</div>
 	</div>
