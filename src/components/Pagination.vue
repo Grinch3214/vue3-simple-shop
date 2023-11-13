@@ -11,7 +11,7 @@
       </button>
     </li>
 
-    <li>
+    <li class="hidden md:block">
       <button
         type="button"
 				class="pagination-btn"
@@ -37,7 +37,7 @@
       </button>
     </li>
 
-    <li>
+    <li class="hidden md:block">
       <button
         type="button"
 				class="pagination-btn"

@@ -9,7 +9,7 @@
 				@goToProduct="goToProductpage"
 			/>
 		</div>
-		<div>
+		<div v-if="productsStore.products.length >= 1" class="mt-10 text-center">
 			<Pagination :totalPages="10" :perPage="10" :currentPage="currentPage" @pagechanged="onPageChange" />
 		</div>
 	</section>
