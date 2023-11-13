@@ -11,7 +11,7 @@
       </button>
     </li>
 
-    <li>
+    <li class="hidden md:block">
       <button
         type="button"
 				class="pagination-btn"
@@ -37,7 +37,7 @@
       </button>
     </li>
 
-    <li>
+    <li class="hidden md:block">
       <button
         type="button"
 				class="pagination-btn"
@@ -84,6 +84,8 @@
 			default: 1
     }
 	})
+
+	console.log(props.totalPages)
 
 	const startPage = computed(() => {
 		if(props.currentPage === 1) { return 1 }
@@ -156,9 +158,9 @@
 
 <style scoped>
 .pagination-btn {
-	@apply flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700;
+	@apply flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 disabled:bg-red-100 disabled:text-gray-700;
 }
 .active {
-  @apply bg-gray-700 text-white;
+  @apply disabled:bg-red-700/60 disabled:text-white;
 }
 </style>
