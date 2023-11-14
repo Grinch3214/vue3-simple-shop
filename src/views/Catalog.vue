@@ -49,8 +49,7 @@
 	}
 
 	const onPageChange = (page) => {
-		console.log(page, 'page Catalog')
-		currentPage.value = page
+		currentPage.value = page 
 	}
 
 
