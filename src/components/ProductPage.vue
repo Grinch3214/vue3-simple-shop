@@ -25,7 +25,7 @@
 			<p class="mb-4"> {{ productsStore.productId.description }} </p>
 			<div>
 				<p class="text-md font-semibold mb-4">${{ productsStore.productId.price }}</p>
-				<button @click="addToCart(productsStore.productId)" class="px-4 py-1 bg-zinc-900 text-white rounded-md w-full md:w-auto">Add to cart</button>
+				<button @click="addToCart(productsStore.productId)" class="px-4 py-3 md:py-1 bg-zinc-900 text-white rounded-md w-full md:w-auto">Add to cart</button>
 			</div>
 		</div>
 	</div>
