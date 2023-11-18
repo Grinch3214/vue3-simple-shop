@@ -67,7 +67,6 @@
 	}
 
 	const removeCartId = (id) => {
-		console.log(id)
 		productsStore.cart = productsStore.cart.filter((item) => item.id !== id);
 	}
 
