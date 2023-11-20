@@ -60,6 +60,7 @@
 	}
 
 	const qualityReduce = (e) => {
+		console.log(e)
 		if (e.quality > 1) {
 			e.quality--
 		}
