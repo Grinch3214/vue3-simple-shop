@@ -53,6 +53,8 @@ export const useProductsStore = defineStore('products', () => {
 		} else {
 			cart.value.push({ ...product, quality: 1 })
 		}
+
+		updateLocalStorage(cart.value)
 	}
 
 	return {
