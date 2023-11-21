@@ -4,6 +4,10 @@ import { URL } from '../constants.js'
 
 export const useProductsStore = defineStore('products', () => {
 
+	// const updateLocalStorage = (cart) => {
+	// 	localStorage.setItem('cart', JSON.stringify(cart))
+	// } need change it in store / change add cart func here
+
 	const cart = ref([])
 
 	const openCart = ref(false)
