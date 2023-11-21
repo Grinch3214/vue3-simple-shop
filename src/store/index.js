@@ -4,9 +4,9 @@ import { URL } from '../constants.js'
 
 export const useProductsStore = defineStore('products', () => {
 
-	// const updateLocalStorage = (cart) => {
-	// 	localStorage.setItem('cart', JSON.stringify(cart))
-	// } need change it in store / change add cart func here
+	const updateLocalStorage = (cart) => {
+		localStorage.setItem('cart', JSON.stringify(cart))
+	}
 
 	const cart = ref([])
 
@@ -42,6 +42,21 @@ export const useProductsStore = defineStore('products', () => {
 		} 
 	}
 
+	// add to cart
+	const addToCart = (product) => {
+		let cartItem = cart.value.find(item => {
+			return item.id === product.id
+		})
+
+		if (cartItem) {
+			cartItem.quality++
+		} else {
+			cart.value.push({ ...product, quality: 1 })
+		}
+
+		updateLocalStorage(cart.value)
+	}
+
 	return {
 		products,
 		fetchProductsFromDB,
@@ -49,6 +64,7 @@ export const useProductsStore = defineStore('products', () => {
 		productId,
 		openCart,
 		cart,
-		lockedBody
+		lockedBody,
+		addToCart
 	}
 })
