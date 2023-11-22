@@ -45,18 +45,6 @@
 	const goToProduct = (id) => {
 		emit('goToProduct', id)
 	}
-
-	// const addToCart = (product) => {
-	// 	let cart = productsStore.cart.find(item => {
-	// 		return item.id === product.id
-	// 	})
-
-	// 	if (cart) {
-	// 		cart.quality++
-	// 	} else {
-	// 		productsStore.cart.push({ ...product, quality: 1 })
-	// 	}
-	// }
 </script>
 
 <style scoped>
