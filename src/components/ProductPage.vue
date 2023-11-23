@@ -48,7 +48,6 @@
 	})
 
 	const addToCart = (prod) => {
-		console.log(prod, 'addToCard in Product Page Component')
 		let cart = productsStore.cart.find(item => {
 			return item.id === prod.id
 		})
