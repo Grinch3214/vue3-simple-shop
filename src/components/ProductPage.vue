@@ -25,7 +25,7 @@
 			<p class="mb-4"> {{ productsStore.productId.description }} </p>
 			<div>
 				<p class="text-md font-semibold mb-4">${{ productsStore.productId.price }}</p>
-				<button @click="addToCart(productsStore.productId)" class="px-4 py-3 md:py-1 bg-zinc-900 text-white rounded-md w-full md:w-auto">Add to cart</button>
+				<button @click="productsStore.addToCart(productsStore.productId)" class="px-4 py-3 md:py-1 bg-zinc-900 text-white rounded-md w-full md:w-auto">Add to cart</button>
 			</div>
 		</div>
 	</div>
@@ -47,13 +47,13 @@
 		productsStore.fetchProductID(+route.params.id)
 	})
 
-	const addToCart = (prod) => {
-		let cart = productsStore.cart.find(item => {
-			return item.id === prod.id
-		})
+	// const addToCart = (prod) => {
+	// 	let cart = productsStore.cart.find(item => {
+	// 		return item.id === prod.id
+	// 	})
 
-		cart ? cart.quality++ : productsStore.cart.push({ ...prod, quality: 1 })
-	}
+	// 	cart ? cart.quality++ : productsStore.cart.push({ ...prod, quality: 1 })
+	// }
 
 	const ratingFix = computed(() => {
 		return productsStore.productId.rating ? productsStore.productId.rating.toFixed(1) : ''
