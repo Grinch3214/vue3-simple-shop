@@ -47,14 +47,6 @@
 		productsStore.fetchProductID(+route.params.id)
 	})
 
-	// const addToCart = (prod) => {
-	// 	let cart = productsStore.cart.find(item => {
-	// 		return item.id === prod.id
-	// 	})
-
-	// 	cart ? cart.quality++ : productsStore.cart.push({ ...prod, quality: 1 })
-	// }
-
 	const ratingFix = computed(() => {
 		return productsStore.productId.rating ? productsStore.productId.rating.toFixed(1) : ''
 	})
