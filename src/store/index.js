@@ -48,11 +48,12 @@ export const useProductsStore = defineStore('products', () => {
 			return item.id === product.id
 		})
 
-		if (cartItem) {
-			cartItem.quality++
-		} else {
-			cart.value.push({ ...product, quality: 1 })
-		}
+		cartItem ? cartItem.quality++ : cart.value.push({ ...product, quality: 1 })
+		// if (cartItem) {
+		// 	cartItem.quality++
+		// } else {
+		// 	cart.value.push({ ...product, quality: 1 })
+		// }
 
 		updateLocalStorage(cart.value)
 	}
