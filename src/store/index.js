@@ -1,19 +1,29 @@
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { defineStore } from 'pinia'
 import { URL } from '../constants.js'
 
 export const useProductsStore = defineStore('products', () => {
 
+	const cart = ref([])
+	const openCart = ref(false)
+	const products = ref([])
+	const productId = ref({})
+
 	const updateLocalStorage = (cart) => {
 		localStorage.setItem('cart', JSON.stringify(cart))
 	}
 
-	const cart = ref([])
+	const updateCartFromLocalStoradge = () => {
+		const localStorCart = localStorage.getItem('cart')
+		if (localStorCart) {
+			cart.value = JSON.parse(localStorCart)
+		}
+	}
 
-	const openCart = ref(false)
-	
-	const products = ref([])
-	const productId = ref({})
+	onMounted(() => {
+		console.log('test')
+		updateCartFromLocalStoradge()
+	})
 
 	const lockedBody = () => {
 		const body = document.querySelector('body')
@@ -53,9 +63,7 @@ export const useProductsStore = defineStore('products', () => {
 		updateLocalStorage(cart.value)
 	}
 
-	// quality cart and remove id
-	// !need fix this and deleted in component SideBar
-
+	// quality cart and remove cart id
 	const qualityAdded = (e) => {
 		console.log(e)
 		e.quality++
