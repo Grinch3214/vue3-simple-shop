@@ -53,6 +53,24 @@ export const useProductsStore = defineStore('products', () => {
 		updateLocalStorage(cart.value)
 	}
 
+	// quality cart and remove id
+	// !need fix this and deleted in component SideBar
+
+	// const qualityAdded = (e) => {
+	// 	e.quality++
+	// }
+
+	// const qualityReduce = (e) => {
+	// 	if (e.quality > 1) {
+	// 		e.quality--
+	// 	}
+	// 	return e.quality
+	// }
+
+	// const removeCartId = (id) => {
+	// 	productsStore.cart = productsStore.cart.filter((item) => item.id !== id);
+	// }
+
 	return {
 		products,
 		fetchProductsFromDB,
