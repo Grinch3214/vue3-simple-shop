@@ -10,9 +10,9 @@
 				<li v-for="item in productsStore.cart" :key="item.id">
 					<CartItem
 					  :cart-item="item"
-					  @quality-added="qualityAdded"
-					  @quality-reduce="qualityReduce"
-					  @remove-cart-id="removeCartId"
+					  @quality-added="productsStore.qualityAdded"
+					  @quality-reduce="productsStore.qualityReduce"
+					  @remove-cart-id="productsStore.removeCartId"
 					/>
 				</li>
 			</ul>
@@ -54,21 +54,6 @@
 	const classChangeCart = computed(() => {
 		return productsStore.openCart ? 'right-0' : '-right-full'
 	})
-
-	const qualityAdded = (e) => {
-		e.quality++
-	}
-
-	const qualityReduce = (e) => {
-		if (e.quality > 1) {
-			e.quality--
-		}
-		return e.quality
-	}
-
-	const removeCartId = (id) => {
-		productsStore.cart = productsStore.cart.filter((item) => item.id !== id);
-	}
 
 </script>
 

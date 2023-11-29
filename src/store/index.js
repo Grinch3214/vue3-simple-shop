@@ -56,20 +56,25 @@ export const useProductsStore = defineStore('products', () => {
 	// quality cart and remove id
 	// !need fix this and deleted in component SideBar
 
-	// const qualityAdded = (e) => {
-	// 	e.quality++
-	// }
+	const qualityAdded = (e) => {
+		console.log(e)
+		e.quality++
+		updateLocalStorage(cart.value)
+	}
 
-	// const qualityReduce = (e) => {
-	// 	if (e.quality > 1) {
-	// 		e.quality--
-	// 	}
-	// 	return e.quality
-	// }
+	const qualityReduce = (e) => {
+		console.log(e)
+		if (e.quality > 1) {
+			e.quality--
+			updateLocalStorage(cart.value)
+		}
+		return e.quality
+	}
 
-	// const removeCartId = (id) => {
-	// 	productsStore.cart = productsStore.cart.filter((item) => item.id !== id);
-	// }
+	const removeCartId = (id) => {
+		cart.value = cart.value.filter((item) => item.id !== id)
+		updateLocalStorage(cart.value)
+	}
 
 	return {
 		products,
@@ -79,6 +84,9 @@ export const useProductsStore = defineStore('products', () => {
 		openCart,
 		cart,
 		lockedBody,
-		addToCart
+		addToCart,
+		qualityAdded,
+		qualityReduce,
+		removeCartId
 	}
 })
