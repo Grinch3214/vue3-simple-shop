@@ -85,8 +85,6 @@
     }
 	})
 
-	console.log(props.totalPages)
-
 	const startPage = computed(() => {
 		if(props.currentPage === 1) { return 1 }
 
