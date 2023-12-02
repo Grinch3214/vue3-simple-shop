@@ -21,7 +21,6 @@ export const useProductsStore = defineStore('products', () => {
 	}
 
 	onMounted(() => {
-		console.log('test')
 		updateCartFromLocalStoradge()
 	})
 
