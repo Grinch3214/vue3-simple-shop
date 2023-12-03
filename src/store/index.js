@@ -64,13 +64,11 @@ export const useProductsStore = defineStore('products', () => {
 
 	// quality cart and remove cart id
 	const qualityAdded = (e) => {
-		console.log(e)
 		e.quality++
 		updateLocalStorage(cart.value)
 	}
 
 	const qualityReduce = (e) => {
-		console.log(e)
 		if (e.quality > 1) {
 			e.quality--
 			updateLocalStorage(cart.value)
