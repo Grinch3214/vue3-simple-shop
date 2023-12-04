@@ -88,7 +88,6 @@ export const useProductsStore = defineStore('products', () => {
 		productId,
 		openCart,
 		cart,
-		// lockedBody,
 		addToCart,
 		qualityAdded,
 		qualityReduce,
