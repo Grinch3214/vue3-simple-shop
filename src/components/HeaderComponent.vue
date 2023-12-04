@@ -24,7 +24,7 @@ const productsStore = useProductsStore()
 
 const openCart = () => {
 	productsStore.openCart = true
-	productsStore.lockedBody()
+	// productsStore.lockedBody()
 }
 
 </script>

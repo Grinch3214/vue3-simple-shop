@@ -40,7 +40,7 @@
 
 	const openCart = () => {
 		productsStore.openCart = false
-		productsStore.lockedBody()
+		// productsStore.lockedBody()
 	}
 
 	const totalCartSum = computed(() => {
