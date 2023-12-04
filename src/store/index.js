@@ -24,10 +24,10 @@ export const useProductsStore = defineStore('products', () => {
 		updateCartFromLocalStoradge()
 	})
 
-	const lockedBody = () => {
-		const body = document.querySelector('body')
-		body.style.overflow = openCart.value ? 'hidden' : ''
-	}
+	// const lockedBody = () => {
+	// 	const body = document.querySelector('body')
+	// 	body.style.overflow = openCart.value ? 'hidden' : ''
+	// }
 
 	const fetchProductsFromDB = async() => {
 		try {
@@ -88,7 +88,7 @@ export const useProductsStore = defineStore('products', () => {
 		productId,
 		openCart,
 		cart,
-		lockedBody,
+		// lockedBody,
 		addToCart,
 		qualityAdded,
 		qualityReduce,
