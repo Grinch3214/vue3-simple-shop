@@ -9,7 +9,7 @@ a live resume builder with [vueJs](http://vuejs.org)
 
 ![screenshot](https://github.com/Grinch3214/vue3-simple-shop/blob/main/screenshots/2.png)
 
-<img src="https://github.com/Grinch3214/vue3-simple-shop/blob/main/screenshots/3.png)" />
+<img src="https://github.com/Grinch3214/vue3-simple-shop/blob/main/screenshots/3.png" height="150" />
 
 ## Technologies used
 
