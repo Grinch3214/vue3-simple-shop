@@ -7,11 +7,11 @@ a live resume builder with [vueJs](http://vuejs.org)
 
  ## Preview
 
-<img src="https://github.com/Grinch3214/vue3-simple-shop/blob/main/screenshots/2.png" width="721" /> <img src="https://github.com/Grinch3214/vue3-simple-shop/blob/main/screenshots/3.png" height="350" />
+<img src="https://github.com/Grinch3214/vue3-simple-shop/blob/main/screenshots/2.png" width="721" /> <img src="https://github.com/Grinch3214/vue3-simple-shop/blob/main/screenshots/1.png" height="350" />
 
 ## Technologies used
 
-- **Tailwind css**
+- **Tailwind**
 - **JavaScript**
 - **Vue 3**
 - **Vue-router**
