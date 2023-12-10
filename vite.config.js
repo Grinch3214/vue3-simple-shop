@@ -13,5 +13,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-	base: '/vue3-simple-shop/',
+	// base: '/vue3-simple-shop/',
 })
